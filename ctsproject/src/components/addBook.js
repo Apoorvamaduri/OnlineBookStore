@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import axios from 'axios';
- class AddAuthor extends Component{
+ class AddBook extends Component{
      state={
-        Name: '',
-        Address: '',
-        ContactNo: '',
-        Email: '',
+        BookTitle: '',
+        AuthorName: '',
+        Category: '',
+        Price: '',
         
         errors: {}
      };
@@ -18,10 +18,10 @@ import axios from 'axios';
      submit=(event)=>{
          event.preventDefault();
          const payload={
-            Name: this.state.Name,
-            Address: this.state.Address,
-            ContactNo: this.state.ContactNo,
-            Email: this.state.Email,
+            BookTitle: this.state.BookTitle,
+            AuthorName: this.state.AuthorName,
+            Category: this.state.Category,
+            Price: this.state.Price,
             
          };
          axios({
@@ -40,10 +40,10 @@ import axios from 'axios';
      }
      resetUserInputs=()=>{
          this.setState({
-            Name: '',
-            Address: '',
-            ContactNo: '',
-            Email: '',
+            BookTitle: '',
+            AuthorName: '',
+            Category: '',
+            Price: '',
             
          });
      };
@@ -54,51 +54,51 @@ render(){
           
         <div className="container col-6 p-5">
         
-              <h3 className="text-info text-center">Add Author details</h3>
+              <h3 className="text-info text-center">Add A New Book</h3>
               
               <form noValidate className="w-100 mx-auto mt-4 pt-0 border border-secondary bg-light p-3" onSubmit={this.submit}>
               <h1 className="h3 mb-3 font-weight-normal"></h1>
               <div className="form-group">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">BookTitle</label>
                 <input
                   type="text"
                   className="form-control"
-                  name="Name"
-                  placeholder="Enter Author name"
-                  value={this.state.Name}
+                  name="BookTitle"
+                  placeholder="Enter Book Title"
+                  value={this.state.BookTitle}
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="name">Address</label>
+                <label htmlFor="name">Author Name</label>
                 <input
                   type="text"
                   className="form-control"
-                  name="Address"
-                  placeholder="Enter  Address"
-                  value={this.state.Address}
+                  name="AuthorName"
+                  placeholder="Enter  Author Name"
+                  value={this.state.AuthorName}
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="text">ContactNo</label>
+                <label htmlFor="text">Category</label>
                 <input
                   type="text"
                   className="form-control"
-                  name="ContactNo"
-                  placeholder="Enter ContactNo"
-                  value={this.state.ContactNo}
+                  name="Category"
+                  placeholder="Enter Category"
+                  value={this.state.Category}
                   onChange={this.handleChange}
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="text">Email</label>
+                <label htmlFor="text">Price</label>
                 <input
                   type="text"
                   className="form-control"
-                  name="Email"
-                  placeholder="Email"
-                  value={this.state.Email}
+                  name="Price"
+                  placeholder="Price"
+                  value={this.state.Price}
                   onChange={this.handleChange}
                 />
               </div>
@@ -119,4 +119,4 @@ render(){
     )
   }
 }
-export default AddAuthor;
+export default AddBook;
