@@ -1,9 +1,9 @@
 const express=require('express');
 const router=express.Router();
-const books=require('../models/books');
+const categories=require('../models/categories');
 router.get('/',(req,res) =>{
    
-    books.find({ })
+    categories.find({ })
      .then((data) => {
         console.log('Data:',data);
         res.json(data);
@@ -18,8 +18,8 @@ router.get('/',(req,res) =>{
     //saving data to mongodb
     const data  =req.body;
     console.log('Data:',data);
-    const newBook=new books(data);
-    newBook.save((error) =>{
+    const newCategory=new categories(data);
+    newCategory.save((error) =>{
           if(error){
               res.status(500).json({msg:'Sorry, internal server errors'});
               return;
