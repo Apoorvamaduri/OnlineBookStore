@@ -1,11 +1,11 @@
 const mongoose=require('mongoose');
 const Schema=mongoose.Schema
 const BookSchema=new Schema({
-    Name:{
+    Username:{
         type:String,
         required:true
     },
-    Address:{
+    Password:{
         type:String,
         required:true
     },
@@ -14,13 +14,17 @@ const BookSchema=new Schema({
         type:String,
         required:true
     },
+    Address:{
+        type:String,
+        required:true
+    },
     Email:{
-        type:Number,
+        type:String,
         required:true
     }
     
 
 })
 //model
- const author=mongoose.model('author',BookSchema);
- module.exports=author;
+ const books=mongoose.model('books',BookSchema);
+ module.exports=books;

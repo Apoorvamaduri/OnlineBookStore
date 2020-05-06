@@ -1,20 +1,20 @@
 const mongoose=require('mongoose');
 const Schema=mongoose.Schema
 const BookSchema=new Schema({
-    Name:{
+    BookTitle:{
         type:String,
         required:true
     },
-    Address:{
+    AuthorName:{
         type:String,
         required:true
     },
    
-    ContactNo:{
+    Category:{
         type:String,
         required:true
     },
-    Email:{
+    Price:{
         type:Number,
         required:true
     }
@@ -22,5 +22,5 @@ const BookSchema=new Schema({
 
 })
 //model
- const author=mongoose.model('author',BookSchema);
- module.exports=author;
+ const books=mongoose.model('books',BookSchema);
+ module.exports=books;
